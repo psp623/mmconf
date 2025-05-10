@@ -5,7 +5,7 @@ from .misc import is_str
 
 def check_file_exist(filename, msg_tmpl='file "{}" does not exist'):
     filename = Path(filename)
-    if filename.is_file():
+    if not filename.is_file():
         raise FileNotFoundError(msg_tmpl.format(filename))
 
 
